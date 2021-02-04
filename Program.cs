@@ -79,15 +79,17 @@ namespace Assignment1_Spring2021
             try
             {
                 // write your code here
+                //iterating n times to print n rows in triangle
                 for (int i = 0; i < n; i++)
                 { 
-                    //loop for spaces
+                    //print 2*n+1 spaces in first row and then decrease it by 1 for every next row
                     for (int j = 2 * n + 1; j > i; j--)
                     {
                         Console.Write(" ");
 
                     }
                     //loop for printing "*"
+                    //prints 2*n+1 stars for each row based on row number 
                     for (int j = 0; j <= i * 2; j++)
                     {
 
@@ -124,6 +126,7 @@ namespace Assignment1_Spring2021
         {
             try
             {
+                //initiating series with 0 and 1
                 int x1 = 0, x2 = 1, x3;
                 Console.Write(x1 + ", " + x2 + ", ");
                 //printing 0 and 1    
@@ -281,6 +284,7 @@ namespace Assignment1_Spring2021
             int count = 0;
             try
             {
+                //
                 for (int x = 0; x < emails.Count; x++)
                 {
                     int i = emails[x].IndexOf("@");
