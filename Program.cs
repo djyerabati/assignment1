@@ -284,7 +284,8 @@ namespace Assignment1_Spring2021
             int count = 0;
             try
             {
-                //
+                //iterating through all emails to slice them at '@' and then 
+                //slice again at '+' sign. remove all the "." and rejoin the parts
                 for (int x = 0; x < emails.Count; x++)
                 {
                     int i = emails[x].IndexOf("@");
@@ -297,6 +298,7 @@ namespace Assignment1_Spring2021
 
                     local = local.Replace(".", "");
                     emails[x] = local + domain;
+                    // check for distinct emails and get count
                     count = emails.Distinct().Count();
 
                 }
@@ -334,24 +336,25 @@ namespace Assignment1_Spring2021
             string d = "";
             try
             {
-
+                //Seperate all source and destination into two different 
+                //arrays and then compare destinations with sources. 
+                //Get final destination that doesn't match with any of the sources 
                 string[] src = new string[paths.Length];
                 string[] dest = new string[paths.Length];
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < paths.Length/2; i++)
                 {
                     src[i] = paths[i, 0];
                     dest[i] = paths[i, 1];
                 }
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < paths.Length/2; i++)
                 {
-                    int j;
-                    for (j = 0; j < 3; j++)
+                    for (int j = 0; j < paths.Length/2; j++)
                     {
                         if (dest[i] == src[j])
                             break;
                     }
 
-                    if (j == 3)
+                    if (j == paths.Length/2)
                     {
                         d = dest[i];
                     }
