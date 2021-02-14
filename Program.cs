@@ -52,8 +52,8 @@ namespace Assignment1_Spring2021
             Console.WriteLine("The number of unique emails is " + ans5);
             
             //Quesiton 6:
-            string[,] paths = new string[,] { { "London", "New York" }, { "New York", "Tampa" },
-                                        { "Delhi", "London" } };
+            string[,] paths = new string[,] { { "B", "C" }, { "D", "B" },
+                                        { "C", "A" } };
             string destination = DestCity(paths);
             Console.WriteLine("Q6");
             Console.WriteLine("Destination city is " + destination);
@@ -333,21 +333,21 @@ namespace Assignment1_Spring2021
 
                 string[] src = new string[paths.Length];
                 string[] dest = new string[paths.Length];
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < paths.Length/2; i++)
                 {
                     src[i] = paths[i, 0];
                     dest[i] = paths[i, 1];
                 }
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < paths.Length / 2; i++)
                 {
                     int j;
-                    for (j = 0; j < 3; j++)
+                    for (j = 0; j < paths.Length / 2; j++)
                     {
                         if (dest[i] == src[j])
                             break;
                     }
 
-                    if (j == 3)
+                    if (j == paths.Length / 2)
                     {
                         d = dest[i];
                     }
